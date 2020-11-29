@@ -6,4 +6,4 @@ Write a function called reverseArray which takes an array as an argument. Withou
 ## Approach & Efficiency
 I used the slicing approach, it took me several atempts to reach to this solution
 ## Solution
-![demo](././assets/array_reverse.png)
+![demo](/assets/array_reverse.png)
