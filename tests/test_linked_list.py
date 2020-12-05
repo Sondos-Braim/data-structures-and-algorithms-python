@@ -1,8 +1,6 @@
 from data_structures_and_algorithms.Data_Structures.linked_list.linked_list import LinkedList
 import pytest
 
-
-
 def test_instantiate():
     li=LinkedList()
     assert li.head==None

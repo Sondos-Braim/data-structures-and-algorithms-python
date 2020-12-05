@@ -24,17 +24,17 @@ class LinkedList:
             else:
                 current=current.next
         return 'False' 
+        
     def __str__(self):
         result = ""
         node = self.head
         if not node:
             return '{}'
         while node:
-            if node != None:
-                result += f'{ { node.value  } }' + " -> "  
-                node = node.next
+            result += f"{ { node.value  } } -> "  
+            node = node.next
             if node == None:
-                result += "None" 
+                    result += "None" 
         return result  
 
     def __len__(self):
@@ -52,6 +52,6 @@ if __name__ == "__main__":
     print(li.includes(10))
     print(li.includes(5))
     print(li)
-
+  
 
 
