@@ -34,6 +34,27 @@ def test_str():
     li.insert(7)
     assert str(li)=='{7} -> {5} -> None'
 
+def test_append():
+    li=LinkedList()
+    li.append(5)
+    li.append(7) 
+    assert len(li)==2
+    assert li.head.value==5
+
+def test_insertBefore():
+    li=LinkedList()
+    li.insert(5)
+    li.insert(7)
+    li.insertBefore(5,1)
+    assert li.head.next.value==1
+
+def test_insertAfter():
+    li=LinkedList()
+    li.insert(5)
+    li.insert(7)
+    li.insertAfter(7,1)
+    assert li.head.next.value==1
+
 
 
 
