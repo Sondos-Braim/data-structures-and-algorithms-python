@@ -16,3 +16,6 @@ I used two classes and used one class inside the other.
 `__append__`: it adds a value to the end.
 `__insertBefore__`: it add a new value before a certain value.
 `__insertAfter__`: it add a new value after a certain value.
+
+## Solution
+![demo](/assets/linked-list.png)
