@@ -13,3 +13,9 @@ I used two classes and used one class inside the other.
 `includes` : it takes a value then checks if it's in the array.
 `__str__`: it will print the array in a specific way.
 `__len__`: it will give the length of the list. 
+`__append__`: it adds a value to the end.
+`__insertBefore__`: it add a new value before a certain value.
+`__insertAfter__`: it add a new value after a certain value.
+
+## Solution
+![demo](/assets/linked-list.png)
