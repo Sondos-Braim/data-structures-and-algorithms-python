@@ -53,16 +53,20 @@ class LinkedList:
 
 
     def insertBefore(self,value,nValue):
-    
-        current=self.head
-        while current.next != None:
-            if current.next.value==value:
-                current.next=Node(nValue,current.next)
-                break
-            else:
-                current=current.next
-        
-        self.size += 1
+        try:
+            current=self.head
+            while current.next != None:
+                if current.next.value==value:
+                    current.next=Node(nValue,current.next)
+                    break
+                else:
+                    current=current.next
+            
+            self.size += 1
+        except AttributeError:
+            return 
+      
+
 
     def insertAfter(self,value,nValue):
         current=self.head
