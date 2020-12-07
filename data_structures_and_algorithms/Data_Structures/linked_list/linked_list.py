@@ -55,6 +55,8 @@ class LinkedList:
         try:
             current=self.head
             while current.next != None:
+                if current.value==value:
+                    self.head=Node(nValue,current)
                 if current.next.value==value:
                     current.next=Node(nValue,current.next)
                     break
@@ -110,7 +112,7 @@ if __name__ == "__main__":
     li.insert(5)
     print(li)
     li.insertBefore(9,1)
-    li.insertBefore(5,1)
+    li.insertBefore(8,1)
     li.insertAfter(9,2)
     li.insertAfter(8,6)
     li.append(5)
