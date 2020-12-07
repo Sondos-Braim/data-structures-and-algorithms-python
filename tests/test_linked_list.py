@@ -46,7 +46,11 @@ def test_insertBefore():
     li.insert(5)
     li.insert(7)
     li.insertBefore(5,1)
-    assert li.head.next.value==1
+    li.insertBefore(7,1)
+    assert li.head.next.next.value==1
+    assert li.head.value==1
+
+    
 
 def test_insertAfter():
     li=LinkedList()
