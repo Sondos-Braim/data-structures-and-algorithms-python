@@ -2,7 +2,7 @@ class Node:
     def __init__(self,value,nextV=None):
         self.value=value
         self.next=nextV
-
+        self.index= 0
 class LinkedList:
     def __init__(self):
         self.head=None
@@ -51,7 +51,6 @@ class LinkedList:
 
         self.size += 1
 
-
     def insertBefore(self,value,nValue):
         try:
             current=self.head
@@ -66,24 +65,33 @@ class LinkedList:
         except AttributeError:
             return 
       
-
-
     def insertAfter(self,value,nValue):
+        try:
+            current=self.head
+            while current != None:
+                if current.value==value:
+                    current.next=Node(nValue,current.next)
+                    break
+                else:
+                    current=current.next
+
+            self.size += 1
+        except AttributeError:
+            return
+
+    def index(self,k):
         current=self.head
-        while current != None:
-            if current.value==value:
-                current.next=Node(nValue,current.next)
-                break
-            else:
+        count=len(self)-1
+        try:
+            while current !=None:
+                current.index=count
+                if current.index==k:
+                    return current.value
                 current=current.next
-
-        self.size += 1
-
+                count-=1
+        except AttributeError:
+            return 
         
-
-
-
-
 
 if __name__ == "__main__":
     li=LinkedList()
@@ -107,6 +115,7 @@ if __name__ == "__main__":
     li.insertAfter(8,6)
     li.append(5)
     print(li)
+    print(li.index(8))
 
   
 

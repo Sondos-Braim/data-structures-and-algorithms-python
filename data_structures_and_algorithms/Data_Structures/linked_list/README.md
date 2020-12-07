@@ -16,6 +16,8 @@ I used two classes and used one class inside the other.
 `__append__`: it adds a value to the end.
 `__insertBefore__`: it add a new value before a certain value.
 `__insertAfter__`: it add a new value after a certain value.
+`__index__`: it gives each node an index so the last one will have the index of zero and it returns the value of a required index.
 
 ## Solution
-![demo](/assets/linked-list.png)
+class6: ![demo](/assets/linked-list.png)
+class7: ![demo](/assets/index.png)

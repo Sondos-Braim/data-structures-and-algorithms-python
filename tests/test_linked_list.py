@@ -55,6 +55,21 @@ def test_insertAfter():
     li.insertAfter(7,1)
     assert li.head.next.value==1
 
+def test_index():
+    li=LinkedList()
+    li.insert(5)
+    assert li.index(0)==5
+    li.insert(7)
+    li.insert(8)
+    assert li.index(0)==5
+    assert li.index(1)==7
+    assert li.index(2)==8
+    assert li.index(3)==None
+    assert li.index(-1)==None
+    assert li.index(4)==None
+    li.insert(10)
+    li.insert(11)
+    assert li.index(2)
 
 
 
