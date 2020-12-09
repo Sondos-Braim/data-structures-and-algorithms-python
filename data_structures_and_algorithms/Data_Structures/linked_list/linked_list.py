@@ -93,11 +93,36 @@ class LinkedList:
                 count-=1
         except AttributeError:
             return 
+
+# def reverse(linkedlist):
+#     if not linkedlist.head:
+#         raise valueerror ('there is no head')
+#     newList=LinkedList()
+#     current=linkedlist.head
+#     while current !=None:
+#         if newList.head==None:
+#             newList.head=Node(current.value,None)
+#         else:
+#             newList.head=Node(current.value,newList.head)
+#         current=current.next
+#     return newList
+
+def reverse(linkedlist):
+    prev=None
+    current=linkedlist.head
+    while current !=None:
+        next = current.next
+        current.next = prev 
+        prev = current 
+        current =next
+        linkedlist.head = prev 
+    return linkedlist
+
         
 
 if __name__ == "__main__":
     li=LinkedList()
-    li.insert(5)
+    li.insert(7)
     li.insert(7)
     li.insert(8)
     print(li.includes(5))
@@ -107,7 +132,9 @@ if __name__ == "__main__":
     print(li.includes(10))
     print(li.includes(5))
     print(li)
-    li.append(9)
+    li.append(4)
+
+    li.append(5)
     print(li)
     li.insert(5)
     print(li)
@@ -115,10 +142,16 @@ if __name__ == "__main__":
     li.insertBefore(8,1)
     li.insertAfter(9,2)
     li.insertAfter(8,6)
-    li.append(5)
-    print(li)
-    print(li.index(8))
+    li.append(7)
+    li.append(9)
 
+    print(li)
+    print(reverse(li))
+    print(li.index(8))
+    
   
+
+# 1 -> 2 -> 3 -> Null
+# ll = []
 
 
