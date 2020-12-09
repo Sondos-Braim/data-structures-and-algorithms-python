@@ -5,19 +5,15 @@ def zipLists(list1,list2):
     list3=LinkedList()
     current1=list1.head
     current2=list2.head
-    index1=len(list1)-1
-    index2=len(list2)-1
 
     while current1!=None or current2!=None:
         
         if current1!=None:
-            list3.append(list1.index(index1))
+            list3.append(current1.value)
             current1=current1.next
         if current2!=None:
-            list3.append(list2.index(index2))
+            list3.append(current2.value)
             current2=current2.next
-        index1-=1
-        index2-=1
 
     return list3
 
