@@ -60,7 +60,7 @@ class Queue:
         try:
             return self.front.value
         except AttributeError:
-            return 'Queque is empty'
+            return 'Queue is empty'
 
     def is_empty(self):
         if self.front:

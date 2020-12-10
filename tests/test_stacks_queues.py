@@ -12,7 +12,7 @@ def test_stack():
     stack.pop()
     assert stack.peek()=='Stack is empty'
 
-def test_queque():
+def test_queue():
     queue = Queue()
     queue.enqueue(4)
     queue.enqueue(5)
@@ -20,4 +20,4 @@ def test_queque():
     assert queue.peek()==5
     queue.dequeue()
     assert queue.is_empty()==True
-    assert queue.peek()=='Queque is empty'
+    assert queue.peek()=='Queue is empty'
