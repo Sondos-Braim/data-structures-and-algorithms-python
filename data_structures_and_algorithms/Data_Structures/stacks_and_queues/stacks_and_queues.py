@@ -15,9 +15,11 @@ class Stack:
 
     def pop(self):
         try:
+            temp=self.top
             nextNode=self.top.next
             self.top.next=None
             self.top=nextNode
+            return temp.value   
         except AttributeError:
             return 'The stack is empty'
 
@@ -50,9 +52,11 @@ class Queue:
 
     def dequeue(self):
         try:
+            temp=self.front
             nextNode=self.front.next
             self.front.next=None
             self.front=nextNode
+            return temp.value
         except AttributeError:
             return 'Queue is empty'
 
