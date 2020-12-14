@@ -5,4 +5,4 @@ Create a brand new PseudoQueue class. Do not use an existing Queue. Instead, thi
 ## Approach & Efficiency
 Enqueue method will happen in stack 2 after pushing the nodes to it, and dequeue will happen in stack 1.
 ## Solution
-![demo](/assets/queue-with-stacks.png)
+![demo](/assets/queue-with-stacks.jpg)
