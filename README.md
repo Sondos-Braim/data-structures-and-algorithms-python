@@ -8,5 +8,6 @@
 *[linked-list](https://github.com/Sondos-Braim/data-structures-and-algorithms-python/blob/master/data_structures_and_algorithms/Data_Structures/linked_list/README.md)* | linked-list
 *[ll-zip](https://github.com/Sondos-Braim/data-structures-and-algorithms-python/blob/master/data_structures_and_algorithms/challenges/ll_zip/README.md)* | ll-zip
 *[stacks-and-queues](https://github.com/Sondos-Braim/data-structures-and-algorithms-python/blob/master/data_structures_and_algorithms/Data_Structures/stacks_and_queues/README.md)* | stacks-and-queues
-*[queue-with-stacks](https://github.com/Sondos-Braim/data-structures-and-algorithms-python/blob/master/data_structures_and_algorithms/Data_Structures/queue_with_stacks/README.md)* | queue-with-stacks
+*[queue-with-stacks](https://github.com/Sondos-Braim/data-structures-and-algorithms-python/blob/master/data_structures_and_algorithms/Data_Structures/queue-with-stacks/README.md)* | queue-with-stacks
 *[fifo-animal-shelter](https://github.com/Sondos-Braim/data-structures-and-algorithms-python/blob/master/data_structures_and_algorithms/challenges/fifo_animal_shelter/README.md)* | fifo-animal-shelter
+*[multi_bracket_validation](https://github.com/Sondos-Braim/data-structures-and-algorithms-python/blob/master/data_structures_and_algorithms/challenges/multi_bracket_validation/README.md)* | multi_bracket_validation

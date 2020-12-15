@@ -1,5 +1,5 @@
 from data_structures_and_algorithms.Data_Structures.linked_list.linked_list import LinkedList
-from data_structures_and_algorithms.Data_Structures.ll_zip.ll_zip import zipLists
+from data_structures_and_algorithms.challenges.ll_zip.ll_zip import zipLists
 
 def test_list_zip():
     li=LinkedList()
