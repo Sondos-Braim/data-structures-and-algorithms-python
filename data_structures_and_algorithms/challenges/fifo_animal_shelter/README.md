@@ -7,4 +7,4 @@ Create a class called AnimalShelter which holds only dogs and cats. The shelter 
 defining a new class that we will instantiate with two queues one for cats and the other for dogs.
 
 ## Solution
-![demo](/assets/animal-shelter.png)
+![demo](/assets/animal-shelter.jpg)
