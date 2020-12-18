@@ -11,3 +11,4 @@
 *[queue-with-stacks](https://github.com/Sondos-Braim/data-structures-and-algorithms-python/blob/master/data_structures_and_algorithms/Data_Structures/queue-with-stacks/README.md)* | queue-with-stacks
 *[fifo-animal-shelter](https://github.com/Sondos-Braim/data-structures-and-algorithms-python/blob/master/data_structures_and_algorithms/challenges/fifo_animal_shelter/README.md)* | fifo-animal-shelter
 *[multi_bracket_validation](https://github.com/Sondos-Braim/data-structures-and-algorithms-python/blob/master/data_structures_and_algorithms/challenges/multi_bracket_validation/README.md)* | multi_bracket_validation
+*[trees](https://github.com/Sondos-Braim/data-structures-and-algorithms-python/blob/master/data_structures_and_algorithms/Data_Structures/tree/README.md)* | trees
