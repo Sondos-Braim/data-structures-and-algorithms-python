@@ -9,10 +9,14 @@ def test_instantiate_and_single_root_node():
     bt.root=Node(5)
     assert bt.preorder()==[5]
 
-def test_preorder(prep):
+def test_traversal(prep):
     assert prep.preorder() == [6,-1,10,5,7,3]
     assert prep.inOrder()== [10, -1, 6, 7, 5, 3]
     assert prep.postOrder()== [10, -1, 7, 3, 5, 6]
+    prep.root.right.right.right = Node(9)
+    assert prep.preorder() == [6, -1, 10, 5, 7, 3, 9]
+    assert prep.inOrder()== [10, -1, 6, 7, 5, 3, 9]
+    assert prep.postOrder()== [10, -1, 7, 9, 3, 5, 6]
 
 def test_binary_search(bst):
     assert bst.root.value == 4
