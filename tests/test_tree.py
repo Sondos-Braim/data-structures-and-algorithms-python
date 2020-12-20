@@ -30,6 +30,17 @@ def test_binary_search(bst):
     assert bst.contains(5)== True
     assert bst.contains(1)== False
 
+def test_find_maximum_value(prep):
+    assert prep.find_maximum_value()==10
+    prep.root.right.right.right = Node(99)
+    assert prep.find_maximum_value()==99
+    new_tree=BinaryTree()
+    assert new_tree.find_maximum_value()=='tree is empty'
+    new_tree.root = Node(8)
+    new_tree.root.right = Node(5)
+    new_tree.root.left = Node(-1)
+    assert new_tree.find_maximum_value()== 8
+
 @pytest.fixture
 def prep():
     bt = BinaryTree()
