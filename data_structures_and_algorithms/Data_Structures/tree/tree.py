@@ -63,7 +63,21 @@ class BinaryTree:
                 _walk(node.right)
             return maximum_value
         return _walk(self.root)
- 
+
+    def add(self, value):
+        if not self.root:
+            self.root = Node(value)
+        else:
+            def _walk(node):
+                if not node.left:
+                    node.left = Node(value)
+                    return
+                    
+                if not node.right:
+                    node.right = Node(value)
+                    return
+                _walk(node.right)
+            _walk(self.root)
 
 
 
@@ -125,17 +139,20 @@ if __name__ == '__main__':
     # print(bst.contains(5))
     # print(bst.contains(1))
     bt = BinaryTree()
-    bt.root = Node(6)
-    bt.root.right = Node(5)
-    bt.root.left = Node(-1)
-    bt.root.right.left = Node(7)
+    # bt.root = Node(6)
+    # bt.root.right = Node(5)
+    # bt.root.left = Node(-1)
+    # bt.root.right.left = Node(7)
     # bt.root.left.left = Node(10)
-    bt.root.right.right = Node(100)
-    bt.root.right.right.left = Node(99)
-    bt.root.right.right.left = Node(199)
-
-
-    # print(bt.preorder())
+    # bt.root.right.right = Node(100)
+    # bt.root.right.right.left = Node(99)
+    # bt.root.right.right.left = Node(199)
+    bt.add(5)
+    bt.add(6)
+    bt.add(8)
+    bt.add(11)
+    print(bt.root.right.left.value)
+    print(bt.preorder())
     # print(bt.inOrder())
     # print(bt.postOrder())
   
