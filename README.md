@@ -25,3 +25,5 @@
 - *[breadth_first](https://github.com/Sondos-Braim/data-structures-and-algorithms-python/blob/master/data_structures_and_algorithms/challenges/breadth_tree/README.md)* 
 
 - *[fizz_buzz_tree](https://github.com/Sondos-Braim/data-structures-and-algorithms-python/blob/master/data_structures_and_algorithms/challenges/fizz_buzz_tree/README.md)* 
+
+- *[hashtable](https://github.com/Sondos-Braim/data-structures-and-algorithms-python/blob/master/data_structures_and_algorithms/Data_Structures/hashtable/README.md)* 
