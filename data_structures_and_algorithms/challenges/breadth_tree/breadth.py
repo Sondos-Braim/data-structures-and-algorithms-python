@@ -1,19 +1,19 @@
 from data_structures_and_algorithms.Data_Structures.tree.tree import BinaryTree,Node
 
 def breadth_first(bt):
-    output=[]
+    arr=[]
     if not bt.root:
         return "tree is empty"
-    output.append(bt.root)
-    out=[]
-    while output:
-        front=output.pop(0)
-        out.append(front.value)
+    arr.append(bt.root)
+    output=[]
+    while arr:
+        front=arr.pop(0)
+        output.append(front.value)
         if front.left:
-            output.append(front.left)
+            arr.append(front.left)
         if front.right:
-            output.append(front.right)
-    return out  
+            arr.append(front.right)
+    return output  
 
 if __name__ == "__main__":
     bt = BinaryTree()

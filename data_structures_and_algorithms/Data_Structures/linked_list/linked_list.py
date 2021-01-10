@@ -57,6 +57,7 @@ class LinkedList:
             while current.next != None:
                 if current.value==value:
                     self.head=Node(nValue,current)
+                    break
                 if current.next.value==value:
                     current.next=Node(nValue,current.next)
                     break
@@ -108,46 +109,55 @@ class LinkedList:
 #     return newList
 
 def reverse(linkedlist):
-    prev=None
+    if not linkedlist.head:
+         raise valueerror ('there is no head')
+    temp=None
     current=linkedlist.head
     while current !=None:
         next = current.next
-        current.next = prev 
-        prev = current 
+        current.next = temp 
+        temp = current 
         current =next
-        linkedlist.head = prev 
+        linkedlist.head = temp 
     return linkedlist
 
-        
+# [1,2,3]  current=1
+#          next=2
+
 
 if __name__ == "__main__":
     li=LinkedList()
-    li.insert(7)
-    li.insert(7)
-    li.insert(8)
-    print(li.includes(5))
-    print(li.includes(7))
-    print(li.includes(8))
-    print(li.includes(9))
-    print(li.includes(10))
-    print(li.includes(5))
-    print(li)
-    li.append(4)
+    li.append(1)
+    li.append(2)
+    li.append(3)
+    li.append(1)
+    # print(li.includes(5))
+    # print(li.includes(7))
+    # print(li.includes(8))
+    # print(li.includes(9))
+    # print(li.includes(10))
+    # print(li.includes(5))
+    # print(li)
+    # li.append(4)
 
-    li.append(5)
-    print(li)
-    li.insert(5)
-    print(li)
-    li.insertBefore(9,1)
-    li.insertBefore(8,1)
-    li.insertAfter(9,2)
-    li.insertAfter(8,6)
-    li.append(7)
-    li.append(9)
+    # li.append(5)
+    # print(li)
+    # li.insert(5)
+    # print(li)
+    li.insertBefore(1,1)
+    li.insertBefore(2,4)
+    li.insertBefore(3,5)
+    li.insertBefore(1,5)
 
     print(li)
-    print(reverse(li))
-    print(li.index(8))
+    # li.insertAfter(9,2)
+    # li.insertAfter(8,6)
+    # li.append(7)
+    # li.append(9)
+
+    # print(li)
+    # print(reverse(li))
+    # print(li.index(8))
     
   
 
