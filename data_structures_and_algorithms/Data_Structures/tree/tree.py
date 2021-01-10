@@ -73,12 +73,13 @@ class BinaryTree:
                     node.left = Node(value)
                     return
                     
-                if not node.right:
+                elif not node.right:
                     node.right = Node(value)
                     return
+                
                 _walk(node.right)
             _walk(self.root)
-
+  
 
 
 class BinarySearchTree(BinaryTree):
@@ -151,8 +152,12 @@ if __name__ == '__main__':
     bt.add(6)
     bt.add(8)
     bt.add(11)
+    print(bt.root.value)
+    print(bt.root.left.value)
+    print(bt.root.right.value)
+    # print(bt.root.left.left.value)
     print(bt.root.right.left.value)
-    print(bt.preorder())
+    # print(bt.preorder())
     # print(bt.inOrder())
     # print(bt.postOrder())
   
