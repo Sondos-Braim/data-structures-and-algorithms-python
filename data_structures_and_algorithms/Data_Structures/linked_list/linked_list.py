@@ -108,6 +108,19 @@ class LinkedList:
 #         current=current.next
 #     return newList
 
+# def reverse(linkedlist):
+#     if not linkedlist.head:
+#          raise valueerror ('there is no head')
+#     temp=None
+#     current=linkedlist.head
+#     while current !=None:
+#         next = current.next
+#         current.next = temp 
+#         temp = current 
+#         current =next
+#         linkedlist.head = temp 
+#     return linkedlist
+
 def reverse(linkedlist):
     if not linkedlist.head:
          raise valueerror ('there is no head')
@@ -115,10 +128,10 @@ def reverse(linkedlist):
     current=linkedlist.head
     while current !=None:
         next = current.next
-        current.next = temp 
-        temp = current 
+        current.next = temp
+        temp = current
+        linkedlist.head = current
         current =next
-        linkedlist.head = temp 
     return linkedlist
 
 # [1,2,3]  current=1
