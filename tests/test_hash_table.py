@@ -13,9 +13,9 @@ def test_hash_table():
     assert things.contains('act') == True 
     assert things.contains('cat') == True
     assert things.contains('game') == False
-    assert things.find('name') == 'Ahmad'
-    assert things.find('color') == 'red'
-    assert things.find('num') == 3
-    assert things.find('game') == None
-    assert things.find('cat') == 'kittie'
-    assert things.find('act') == 'good'
+    assert things.get('name') == 'Ahmad'
+    assert things.get('color') == 'red'
+    assert things.get('num') == 3
+    assert things.get('game') == None
+    assert things.get('cat') == 'kittie'
+    assert things.get('act') == 'good'
