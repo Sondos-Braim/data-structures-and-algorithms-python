@@ -3,6 +3,7 @@ class Node:
         self.value=value
         self.next=nextV
         self.index= 0
+
 class LinkedList:
     def __init__(self):
         self.head=None
@@ -134,16 +135,84 @@ def reverse(linkedlist):
         current =next
     return linkedlist
 
+def palindrome(linkedlist):
+    save=LinkedList()
+    if not linkedlist.head:
+         raise valueerror ('there is no head')
+    temp=None
+    current=linkedlist.head
+    while current !=None:
+        save.append(current.value)
+        next = current.next
+        current.next = temp
+        temp = current
+        linkedlist.head = current
+        current =next
+    if save==linkedlist:
+        return True
+    else:
+        return False
+
 # [1,2,3]  current=1
 #          next=2
 
+# def intersection(li1,li2):
+#     head1=li1.head
+#     head2=li2.head
+#     while head1.value != head2.value:
+#         if head1:
+#             # print(head1.value)
+#             head1=head1.next
+#         else:
+#             print('hiiiiiiiiiii')
+#             head1=li2.head
+#         if head2:
+#             head2=head2.next
+#         else:
+#             print('hiiiiiiiiiiiiiiiiiii')
+#             head2=li1.head
+#     return head1.value
+def getIntersectionNode( headA, headB):
+    curA,curB = headA,headB
+    lenA,lenB = 0,0
+    while curA is not None:
+        lenA += 1
+        curA = curA.next
+    while curB is not None:
+        lenB += 1
+        curB = curB.next
+    curA,curB = headA,headB
+    if lenA > lenB:
+        for i in range(lenA-lenB):
+            curA = curA.next
+    elif lenB > lenA:
+        for i in range(lenB-lenA):
+            curB = curB.next
+    while curB.value != curA.value:
+        curB = curB.next
+        curA = curA.next
+    return curA.value
 
 if __name__ == "__main__":
-    li=LinkedList()
-    li.append(1)
-    li.append(2)
-    li.append(3)
-    li.append(1)
+    li1=LinkedList()
+    li1.append(4)
+    li1.append(-9)
+    li1.append(1)
+    li1.append(2)
+    li1.append(3)
+    li1.append(4)
+    # li2=LinkedList()
+    # li2.append(99)
+    # li2.append(1)
+    # li2.append(2)
+    # li2.append(3)
+    # li2.append(4)
+    print(li1)
+    # print(li2)
+    print(palindrome(li1))  
+
+    # reverse(li.head)
+
     # print(li.includes(5))
     # print(li.includes(7))
     # print(li.includes(8))
@@ -157,12 +226,12 @@ if __name__ == "__main__":
     # print(li)
     # li.insert(5)
     # print(li)
-    li.insertBefore(1,1)
-    li.insertBefore(2,4)
-    li.insertBefore(3,5)
-    li.insertBefore(1,5)
+    # li.insertBefore(1,1)
+    # li.insertBefore(2,4)
+    # li.insertBefore(3,5)
+    # li.insertBefore(1,5)
 
-    print(li)
+    # print(li)
     # li.insertAfter(9,2)
     # li.insertAfter(8,6)
     # li.append(7)
