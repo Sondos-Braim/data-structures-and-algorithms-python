@@ -20,6 +20,4 @@ def test_fizz_buzz():
     tree.root.left.right.left=Node(4)
     tree.root.left.right.right=Node(5) 
     tree.root.left.left.left=Node(15)
-    assert FizzBuzzTree(tree).preorder()==['Buzz', 'Fizz', '31', 'FizzBuzz', 'Fizz', 'Fizz', '4', 'Buzz', '8', 'Fizz', '1', '11', '2']
-
-     
+    assert FizzBuzzTree(tree).preorder()==['Buzz', 'Fizz', 'FizzBuzz', 'Buzz', '8', 'Fizz', 'Fizz', '1', '31', 'Fizz', '11', '2', '4']

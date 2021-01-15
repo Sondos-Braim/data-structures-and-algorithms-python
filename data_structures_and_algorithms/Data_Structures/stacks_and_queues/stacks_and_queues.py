@@ -53,12 +53,52 @@ class Queue:
     def dequeue(self):
         try:
             temp=self.front
-            nextNode=self.front.next
-            self.front.next=None
-            self.front=nextNode
+            if self.front.next:
+                nextNode=self.front.next
+                self.front.next=None
+                self.front=nextNode
+            else:
+                self.front=None
+                self.rear=None
             return temp.value
         except AttributeError:
             return 'Queue is empty'
+    # def dequeue(self):
+    #     try:
+    #         temp=self.front
+    #         # nextNode=self.front.next
+    #         if self.front.next:
+    #             nextNode=self.front.next
+    #             self.front.next=None
+    #             self.front=nextNode
+    #         else:
+    #             self.front=None
+    #         # self.front.next=None
+    #         return temp
+    #     except AttributeError:
+    #         return 'Queue is empty'
+
+    # def enqueue(self, data):
+    #     node = Node(data)
+
+    #     if self.rear:
+    #         self.rear.next = node
+    #         self.rear = node
+    #     else:
+    #         self.front = node
+    #         self.rear = node
+
+    # def dequeue(self):
+    #     temp = self.front
+    #     if self.is_empty():
+    #         raise AttributeError ('Queue is empty')
+    #     else:
+            
+    #         self.front = self.front.next
+    #         temp.next = None
+    #     if self.front == None:
+    #         self.rear = None
+    #     return temp
 
     def peek(self):
         try:

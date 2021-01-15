@@ -193,6 +193,44 @@ def getIntersectionNode( headA, headB):
         curA = curA.next
     return curA.value
 
+def print_middle(llist):
+    current = llist.head
+    length = 0
+    while current:
+        current = current.next
+        length = length + 1
+    current = llist.head
+    for i in range((length - 1)//2):
+        current = current.next
+    if current:
+        if length % 2 == 0:
+            return('The two middle elements are {} and {}.'
+                .format(current.data, current.next.data))
+        else:
+            return('The middle element is {}.'.format(current.data))
+    else:
+        return('The list is empty.')
+
+def odd_then_even(ll):
+    odd=ll.head
+    even=ll.head.next
+    list2=LinkedList()
+    while odd:
+        list2.append(odd.value)
+        for i in range(2):
+            if odd:
+                odd=odd.next
+            else:
+                odd=None
+    while even:
+        list2.append(even.value)
+        for i in range(2):
+            if even:
+                even=even.next
+            else:
+                even=None      
+    return list2
+
 if __name__ == "__main__":
     li1=LinkedList()
     li1.append(4)
@@ -201,15 +239,16 @@ if __name__ == "__main__":
     li1.append(2)
     li1.append(3)
     li1.append(4)
+    print(odd_then_even(li1))
     # li2=LinkedList()
     # li2.append(99)
     # li2.append(1)
     # li2.append(2)
     # li2.append(3)
     # li2.append(4)
-    print(li1)
-    # print(li2)
-    print(palindrome(li1))  
+    # print(li1)
+    # # print(li2)
+    # print(palindrome(li1))  
 
     # reverse(li.head)
 
