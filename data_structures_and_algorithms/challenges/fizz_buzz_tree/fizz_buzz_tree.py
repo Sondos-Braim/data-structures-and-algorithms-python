@@ -11,18 +11,20 @@ def fizzBuzz(node):
             return str(node.value)
 
 def FizzBuzzTree(bt):
-    try:
-        new_tree=BinaryTree()
-        def _walk(node):
-            new_tree.add(fizzBuzz(node))       
-            if node.left:           
-                _walk(node.left)
-            if node.right:
-                _walk(node.right)
-            return new_tree
-        return _walk(bt.root)
-    except:
+   
+    if not bt.root:
         return "tree is empty"
+    new_tree=BinaryTree()
+    def _walk(node):
+        new_tree.insert(fizzBuzz(node))       
+        if node.left:           
+            _walk(node.left)
+        if node.right:
+            _walk(node.right)
+        return new_tree
+    return _walk(bt.root)
+
+        
 
 if __name__ == "__main__":
     tree=BinaryTree()
@@ -42,5 +44,5 @@ if __name__ == "__main__":
    
     
 
-    print(tree.preorder())
-    print (FizzBuzzTree(tree).preorder())
+    # print(tree.preorder())
+    print (FizzBuzzTree(tree))
