@@ -219,27 +219,159 @@ class BinarySearchTree(BinaryTree):
             return False           
         return _walk(self.root)
 
-def revert_tree(bt):
+# def revert_tree(bt):
+#     if not bt.root:
+#         return None
+#     def _walk(node):
+#         if node.left and node.right:
+#             left=node.left
+#             node.left=node.right
+#             node.right=left
+#             _walk(node.left)
+#             _walk(node.right)
+#         if node.left and not node.right:
+#             node.right=node.left
+#             node.left=None
+#         if node.right and not node.left:
+#             node.left=node.right
+#             node.right=None
+#     _walk(bt.root)
+#     return bt
+
+def invert_tree(bt):
     if not bt.root:
-        return None
-    def _walk(node):
+        return "tree is empty"
+    q=Queue()
+    q.enqueue(bt.root)
+    while q.front:       
+        node=q.dequeue()
         if node.left and node.right:
-            left=node.left
+            left_node=node.left
             node.left=node.right
-            node.right=left
-            _walk(node.left)
-            _walk(node.right)
+            node.right=left_node
+            q.enqueue(node.left)
+            q.enqueue(node.right)
         if node.left and not node.right:
             node.right=node.left
             node.left=None
+            q.enqueue(node.right)
         if node.right and not node.left:
             node.left=node.right
             node.right=None
-    _walk(bt.root)
+            q.enqueue(node.left)
     return bt
-''
-if __name__ == '__main__':
 
+# def invert_tree(bt):
+#     if not bt.root:
+#         return "tree is empty"
+#     q=Queue()
+#     while q.front:
+#         node=q.dequeue()
+#         if node.left and node.right:
+#             leftNode=node.left
+#             node.left=node.right
+#             node.right=leftNode
+#             q.enqueue(node.left)
+#             q.enqueue(node.right)
+#         if node.left and not node.right:
+#             node.right=node.left
+#             node.left=None
+#             q.enqueue(node.right)
+#         if node.right and not node.left:
+#             node.left=node.right
+#             node.right=None
+#             q.enqueue(node.left)
+#   return bt
+
+def maxDepth(node): 
+    if not node: 
+        return 0 
+    else : 
+        if maxDepth(node.left) > maxDepth(node.right) : 
+            return maxDepth(node.left) +1
+        else: 
+            return maxDepth(node.right) +1
+
+# def is_bst(bt):
+#     if not bt.root:
+#             return 'empty tree'
+#     node=bt.root
+#     isBST=True
+#     def _walk(node):
+#         nonlocal isBST
+#         if node.left:
+#             if node.left.value>=node.value:
+#                 isBST=False
+#                 return isBST
+#             else:
+#                 _walk(node.left)
+#         if node.right:
+#             if node.right.value<node.value:
+#                 isBST=False
+#                 return isBST
+#             else:
+#                 _walk(node.right)
+#         return isBST
+ 
+#     return _walk(node)
+def is_bst(bt):
+    if not bt.root:
+        return'empty'
+    q = []
+    boolen = True
+    q.append(bt.root)
+    while q :
+        node = q.pop(0)
+        if node.left  :
+            if node.left.value> node.value:
+                boolen= False
+                return boolen
+            else :
+                q.append(node.left)
+        if node.right  :
+            if node.right.value < node.value:
+                boolen= False
+                return boolen
+            else :
+                q.append(node.right)
+    return boolen
+        
+    #     if node.left:
+    #         if node.left.value<node.value:
+    #             return _walk(node.left)
+    #         else:
+    #             return False  
+    #     if node.right:
+    #         if node.right.value<node.value:
+    #             return _walk(node.right)
+    #         else:
+    #             return False
+        
+    # _walk(bt.root)
+    # return True
+        
+
+# def is_bst(tree):
+
+#     def _walk(node):
+#         if node == None:
+#             return None
+#         if node.left :
+#             if node.left.value<node.value:
+#                 _walk(node.left)
+#             else:
+#                 return False
+#         if node.right:
+#           if node.right.value>node.value:
+#                _walk(node.right)
+#               else:
+#                    return False
+#        return True
+#     return _walk(tree.root)
+def height(bt):
+    pass
+if __name__ == '__main__':
+   
     # bst = BinarySearchTree()
     # bst.add(4)
     # bst.add(9)
@@ -271,22 +403,31 @@ if __name__ == '__main__':
     # print(bt.root.right.right.value)
 
    
-    bt.root = Node(6)
-    bt.root.right = Node(5)
-    bt.root.left = Node(-1)
-    bt.root.right.left = Node(7)
-    bt.root.left.left = Node(10)
-    bt.root.right.right = Node(100)
-    bt.root.left.right = Node(99)
-    bt.root.right.right.left = Node(199)
-    bt.insert(2) #root
-    bt.insert(6) #left
-    bt.insert(9) #right
-    bt.insert(3) #left left
-    bt.insert(-1) #left right
-    bt.insert('hi') #right left
-    bt.insert(10) #right right
-    print(bt.breadth_first())
+    bt.root = Node(6)   
+    bt.root.left = Node(5)
+    bt.root.right = Node(12)
+
+    invert_tree(bt)
+    print(bt.root.left.value)
+    print(bt.root.right.value)
+
+    # bt.root.right.right = Node(1)
+
+    # bt.root.right.left = Node(8)
+    # # print(is_bst(bt))
+
+    # bt.root.right.right = Node(100)
+    # bt.root.left.right = Node(99)
+    # bt.root.right.right.left = Node(199)
+    # bt.insert(2) #root
+    # bt.insert(6) #left
+    # bt.insert(9) #right
+    # bt.insert(3) #left left
+    # bt.insert(-1) #left right
+    # bt.insert('hi') #right left
+    # bt.insert(10) #right right
+    # print(bt.breadth_first())
+    # print(maxDepth(bt.root))
     # bt.add(5)
     # bt.add(6)
     # bt.add(8)
