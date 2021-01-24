@@ -25,3 +25,11 @@ Implement your own Graph. The graph should be represented as an adjacency list
 
 `Size()`
 - Returns the total number of nodes in the graph
+
+# Challenge Summary
+
+## Challenge Description
+Once you’ve achieved a working solution, define a new method that accepts two nodes as input and uses your traversal algorithm to determine if a path exists between the two nodes.
+
+## Solution
+![demo](../../../assets/if_path.jpg)

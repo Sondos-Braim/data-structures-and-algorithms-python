@@ -44,6 +44,16 @@ class Graph:
                     nodes.add(n)
         return nodes
 
+    def if_path(self,node1,node2):
+        keys=[]
+        for key in self.adjacency_list[node1].keys():
+            keys.append(key)
+        if node2 in keys:
+            return True
+        else:
+            return False
+            
+
 # Adjacency_list = {n1:{n2:4,n4:5}, n2:{n1:4,n3:9}, n3:{n2:9}, n4:{n1:5,n3:9}, n5:{}}
 if __name__ == "__main__":
     graph=Graph()
